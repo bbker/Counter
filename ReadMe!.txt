@@ -1,0 +1,1 @@
+本程序需要添加junt4库以及fest-swing压缩包内的jar
