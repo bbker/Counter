@@ -9,41 +9,45 @@ import org.junit.Test;
 
 public class CounterTestEquation {
 
-private FrameFixture frame;//¶¨ÒåFrameFixture±äÁ¿£¨ÔÚfest-swing¡£jarÖĞ£©
+private FrameFixture frame;//å®šä¹‰FrameFixtureå˜é‡ï¼ˆåœ¨fest-swingã€‚jarä¸­ï¼‰
 	@Before
 	public void setUp() throws Exception {
-		frame=new FrameFixture(new Equation());//¶ÔTheorem£¨¹´¹É¶¨Àí£©ÊµÀı»¯¸øframe
-		frame.show();//ÏÔÊ¾Theorem´°Ìå		
+		frame=new FrameFixture(new Equation());//å¯¹Theoremï¼ˆå‹¾è‚¡å®šç†ï¼‰å®ä¾‹åŒ–ç»™frame
+		frame.show();//æ˜¾ç¤ºTheoremçª—ä½“		
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		frame.cleanUp();//ÇåÀíTheorem´°¿Ú		
+		frame.cleanUp();//æ¸…ç†Theoremçª—å£		
 	}
 
 	@Test	
-	public void testEquation(){//¶ÔTheorem½øĞĞ²âÊÔ
-		frame.textBox("a=").enterText("1");//Ä£Äâ¼üÅÌÔÚÎÄ±¾¿òÖĞÊäÈë1
-		frame.textBox("b=").enterText("2");//Ä£Äâ¼üÅÌÔÚÎÄ±¾¿òÖĞÊäÈë2
-		frame.textBox("c=").enterText("2");//Ä£Äâ¼üÅÌÔÚÎÄ±¾¿òÖĞÊäÈë2
-		frame.button("x1").click();//Ä£ÄâÊó±êµã»÷x1°´Å¥
-		frame.textBox("output").requireText("dĞ¡ÓÚ0ÎŞ½â");//¼ì²éÊä³öµÄ½á¹ûÊÇ·ñÊÇdĞ¡ÓÚ0ÎŞ½â£¬ÊÇÍ¨¹ı£¬·ñ³ö´í
+	public void testEquation(){//å¯¹Theoremè¿›è¡Œæµ‹è¯•
+	        //æµ‹è¯•dã€ˆ0æ— è§£æƒ…å†µ
+		frame.textBox("a=").enterText("1");//æ¨¡æ‹Ÿé”®ç›˜åœ¨æ–‡æœ¬æ¡†ä¸­è¾“å…¥1
+		frame.textBox("b=").enterText("2");//æ¨¡æ‹Ÿé”®ç›˜åœ¨æ–‡æœ¬æ¡†ä¸­è¾“å…¥2
+		frame.textBox("c=").enterText("2");//æ¨¡æ‹Ÿé”®ç›˜åœ¨æ–‡æœ¬æ¡†ä¸­è¾“å…¥2
+		frame.button("x1").click();//æ¨¡æ‹Ÿé¼ æ ‡ç‚¹å‡»x1æŒ‰é’®
+		frame.textBox("output").requireText("då°äº0æ— è§£");//æ£€æŸ¥è¾“å‡ºçš„ç»“æœæ˜¯å¦æ˜¯då°äº0æ— è§£ï¼Œæ˜¯é€šè¿‡ï¼Œå¦å‡ºé”™
 		clear();
-		frame.textBox("a=").enterText("4");//Ä£Äâ¼üÅÌÔÚÎÄ±¾¿òÖĞÊäÈë4
-		frame.textBox("b=").enterText("4");//Ä£Äâ¼üÅÌÔÚÎÄ±¾¿òÖĞÊäÈë4
-		frame.textBox("c=").enterText("1");//Ä£Äâ¼üÅÌÔÚÎÄ±¾¿òÖĞÊäÈë1
-		frame.button("x1").click();//Ä£ÄâÊó±êµã»÷x1°´Å¥
-		frame.textBox("output").requireText("-0.5");//¼ì²éÊä³öµÄ½á¹ûÊÇ·ñÊÇ-0.5£¬ÊÇÍ¨¹ı£¬·ñ³ö´í
+		//æµ‹è¯•d=0ï¼Œæœ‰2ä¸ªç›¸åŒè§£æƒ…å†µ
+		frame.textBox("a=").enterText("4");//æ¨¡æ‹Ÿé”®ç›˜åœ¨æ–‡æœ¬æ¡†ä¸­è¾“å…¥4
+		frame.textBox("b=").enterText("4");//æ¨¡æ‹Ÿé”®ç›˜åœ¨æ–‡æœ¬æ¡†ä¸­è¾“å…¥4
+		frame.textBox("c=").enterText("1");//æ¨¡æ‹Ÿé”®ç›˜åœ¨æ–‡æœ¬æ¡†ä¸­è¾“å…¥1
+		frame.button("x1").click();//æ¨¡æ‹Ÿé¼ æ ‡ç‚¹å‡»x1æŒ‰é’®
+		frame.textBox("output").requireText("-0.5");
+		frame.textBox("output1").requireText("-0.5");//æ£€æŸ¥è¾“å‡ºçš„ç»“æœæ˜¯å¦æ˜¯-0.5ï¼Œæ˜¯é€šè¿‡ï¼Œå¦å‡ºé”™
 		clear();
-		frame.textBox("a=").enterText("1");//Ä£Äâ¼üÅÌÔÚÎÄ±¾¿òÖĞÊäÈë1
-		frame.textBox("b=").enterText("3");//Ä£Äâ¼üÅÌÔÚÎÄ±¾¿òÖĞÊäÈë3
-		frame.textBox("c=").enterText("2");//Ä£Äâ¼üÅÌÔÚÎÄ±¾¿òÖĞÊäÈë2
-		frame.button("x1").click();//Ä£ÄâÊó±êµã»÷x1°´Å¥
-		frame.textBox("output").requireText("-1.0");//¼ì²éÊä³öµÄ½á¹ûÊÇ·ñÊÇ-1.0£¬ÊÇÍ¨¹ı£¬·ñ³ö´í
-		frame.textBox("output1").requireText("-2.0");//¼ì²éÊä³öµÄ½á¹ûÊÇ·ñÊÇ-2.0£¬ÊÇÍ¨¹ı£¬·ñ³ö´í
+		//æµ‹è¯•d>0ï¼Œæœ‰2ä¸ªè§£æƒ…å†µ
+		frame.textBox("a=").enterText("1");//æ¨¡æ‹Ÿé”®ç›˜åœ¨æ–‡æœ¬æ¡†ä¸­è¾“å…¥1
+		frame.textBox("b=").enterText("3");//æ¨¡æ‹Ÿé”®ç›˜åœ¨æ–‡æœ¬æ¡†ä¸­è¾“å…¥3
+		frame.textBox("c=").enterText("2");//æ¨¡æ‹Ÿé”®ç›˜åœ¨æ–‡æœ¬æ¡†ä¸­è¾“å…¥2
+		frame.button("x1").click();//æ¨¡æ‹Ÿé¼ æ ‡ç‚¹å‡»x1æŒ‰é’®
+		frame.textBox("output").requireText("-1.0");//æ£€æŸ¥è¾“å‡ºçš„ç»“æœæ˜¯å¦æ˜¯-1.0ï¼Œæ˜¯é€šè¿‡ï¼Œå¦å‡ºé”™
+		frame.textBox("output1").requireText("-2.0");//æ£€æŸ¥è¾“å‡ºçš„ç»“æœæ˜¯å¦æ˜¯-2.0ï¼Œæ˜¯é€šè¿‡ï¼Œå¦å‡ºé”™
 		clear();
 	}
-	public void clear(){//½«ÎÄ±¾¿òµÄÄÚÈİÇå¿Õ
+	public void clear(){//å°†æ–‡æœ¬æ¡†çš„å†…å®¹æ¸…ç©º
 		frame.textBox("a=").deleteText();
 		frame.textBox("b=").deleteText();
 		frame.textBox("c=").deleteText();
